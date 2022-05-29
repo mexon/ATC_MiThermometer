@@ -10,7 +10,6 @@ class ScanDelegate(DefaultDelegate):
         for (sdid, desc, val) in dev.getScanData():
             if self.isTemperature(dev.addr, sdid, val):
                 print(json.dumps(self.parseData(val)))
-                exit()
 
     def isTemperature(self, addr, sdid, val):
         if sdid != 22:
